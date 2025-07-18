@@ -96,6 +96,45 @@ footer a{color:#80c8ff;}
   outline:2px solid #ffeb3b;
 }
 
+/* ===== ARTICLE ===== */
+main.article{
+  max-width:800px;
+  margin:40px auto;
+  background:#fff;
+  padding:40px 50px;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,.08);
+  line-height:1.55;
+}
+main.article h1{
+  font-family:'Luckiest Guy',Arial Black,sans-serif;
+  font-size:32px;
+  margin-bottom:20px;
+  text-align:center;
+  text-shadow:1px 1px 0 #004a79;
+}
+main.article h2{
+  font-size:22px;
+  margin:35px 0 15px;
+  color:#0074A6;
+  border-left:4px solid #ffeb3b;
+  padding-left:8px;
+}
+main.article ul{
+  margin-left:18px;
+  margin-bottom:20px;
+}
+main.article li{
+  margin-bottom:8px;
+}
+main.article a{
+  color:#0066b3;
+}
+main.article a:hover{
+  text-decoration:underline;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:850px){
   .container{flex-direction:column;}
