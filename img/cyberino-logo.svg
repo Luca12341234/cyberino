@@ -1,0 +1,23 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Cyberino logo – fix definitivo per la N -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" role="img" aria-labelledby="title">
+  <title>Cyberino logo</title>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00A7FF"></stop>
+      <stop offset="1" stop-color="#0066B3"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Testo CYBERIN con tracking più largo -->
+  <text x="10" y="63" font-family="Luckiest Guy, Arial Black, sans-serif" font-size="60" letter-spacing="4" fill="url(#grad)" stroke="#002D4F" stroke-width="2" paint-order="stroke">
+    CYBERIN
+  </text>
+
+  <!-- “O” cartoon spostata MOLTO a destra -->
+  <circle cx="370" cy="47" r="28" fill="url(#grad)" stroke="#002D4F" stroke-width="2"></circle>
+  <circle cx="350" cy="20" r="14" fill="url(#grad)" stroke="#002D4F" stroke-width="2"></circle>
+  <circle cx="390" cy="20" r="14" fill="url(#grad)" stroke="#002D4F" stroke-width="2"></circle>
+</svg>
