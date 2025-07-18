@@ -25,12 +25,13 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li>
+            <!-- SEARCH BOX ora attivo -->
             <div class="search-box">
               <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="10" cy="10" r="6" stroke="#fff" stroke-width="2" fill="none"/>
                 <line x1="14.5" y1="14.5" x2="22" y2="22" stroke="#fff" stroke-width="2"/>
               </svg>
-              <input type="search" placeholder="Cerca…" disabled>
+              <input id="search-input" type="search" placeholder="Cerca…">
             </div>
           </li>
         </ul>
@@ -41,19 +42,16 @@
   <!-- ===== MAIN & ASIDE ===== -->
   <div class="container">
     <main>
-      <!-- usa un id per comodità -->
       <ul id="news-list" class="news-list">
         <li><a href="#">⚡️ Nuova vulnerabilità zero-day in Windows: cosa sapere subito</a></li>
         <li><a href="#">🔐 TLS 1.3 spiegata semplice</a></li>
         <li><a href="#">🚨 Phishing bancario: i 5 indicatori</a></li>
         <li><a href="#">🛡️ Hardening server Linux in 10 passi</a></li>
         <li><a href="#">🧑‍💻 Malware analysis base con Ghidra – parte 1</a></li>
-
-        <!-- Aggiungi altri <li> come vuoi:
-             il JS li paginerà automaticamente -->
+        <!-- Aggiungi liberamente altri <li> -->
       </ul>
 
-      <!-- qui JS inserirà i numeri -->
+      <!-- la barra verrà riempita dallo script -->
       <nav id="pagination" class="pagination" aria-label="Paginazione"></nav>
     </main>
 
