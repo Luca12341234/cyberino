@@ -17,48 +17,42 @@ header{background:#0074A6;color:#fff;}
   padding:10px 20px;
 }
 
-/* logo: altezza fissa così l’SVG non resta 0×0 */
+/* logo più piccolo */
 .logo img{
-  height:60px;
+  height:40px;       /* <──── ridotto qui */
   width:auto;
 }
 
-nav ul{
-  display:flex;
-  gap:25px;
-  list-style:none;
+/* lista menu */
+nav ul{display:flex;gap:25px;list-style:none;}
+nav li{display:flex;align-items:center;}
+
+/* stile cartoon sui link */
+header nav a{
+  font-family:'Luckiest Guy',Arial Black,sans-serif;
+  font-size:20px;
+  color:#fff;
+  text-shadow:1px 1px 0 #004a79;
 }
-nav li{display:flex;align-items:center;font-weight:600;}
+header nav a:hover{color:#ffeb3b;}
 
 /* ===== SEARCH (solo estetico) ===== */
 .search-box{position:relative;}
 .search-box input{
   padding:6px 10px 6px 32px;
-  border:none;border-radius:2px;font-size:14px;
-  outline:0;
+  border:none;border-radius:2px;font-size:14px;outline:0;
 }
-.search-box input:disabled{
-  background:#fff;
-  color:#777;
-  cursor:not-allowed;
-}
-/* per Font Awesome (se lo re-userai) */
-.search-box .fa-magnifying-glass{
-  position:absolute;left:10px;top:50%;
-  transform:translateY(-50%);
-  color:#555;
-}
-/* per la lente SVG inline */
+.search-box input:disabled{background:#fff;color:#777;cursor:not-allowed;}
+
+/* lente SVG inline */
 header .search-box svg{
-  position:absolute;left:10px;top:50%;
-  transform:translateY(-50%);
+  position:absolute;left:10px;top:50%;transform:translateY(-50%);
   stroke:#fff;
 }
 
 /* ===== LAYOUT ===== */
 .container{
-  max-width:1200px;margin:20px auto;
-  display:flex;gap:20px;
+  max-width:1200px;margin:20px auto;display:flex;gap:20px;
   padding:0 20px;
 }
 main{flex:1 1 0;}
@@ -75,9 +69,7 @@ aside{flex:0 0 300px;}
 
 /* ===== NEWS LIST ===== */
 .news-list{list-style:none;margin-bottom:30px;}
-.news-list li{
-  background:#fff;border-bottom:1px solid #ddd;padding:15px;
-}
+.news-list li{background:#fff;border-bottom:1px solid #ddd;padding:15px;}
 .news-list li:last-child{border-bottom:none;}
 
 /* ===== PAGINATION ===== */
@@ -99,7 +91,3 @@ footer a{color:#80c8ff;}
   .container{flex-direction:column;}
   aside{order:-1;flex:1 1 100%;}
 }
-
-/* ===== LINK HEADER IN BIANCO ===== */
-header nav a{color:#fff;}
-header nav a:hover{text-decoration:underline;}
