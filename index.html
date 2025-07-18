@@ -7,7 +7,6 @@
 
   <!-- Font cartoon -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,7 +29,7 @@
                 <circle cx="10" cy="10" r="6" stroke="#fff" stroke-width="2" fill="none"/>
                 <line x1="14.5" y1="14.5" x2="22" y2="22" stroke="#fff" stroke-width="2"/>
               </svg>
-              <input id="search-input" type="search" placeholder="Cerca…">
+              <input id="search" type="search" placeholder="Cerca…">
             </div>
           </li>
         </ul>
@@ -41,16 +40,17 @@
   <!-- ===== MAIN & ASIDE ===== -->
   <div class="container">
     <main>
-      <ul id="news-list" class="news-list">
+      <ul id="list" class="news-list">
         <li><a href="#">⚡️ Nuova vulnerabilità zero-day in Windows: cosa sapere subito</a></li>
         <li><a href="#">🔐 TLS 1.3 spiegata semplice</a></li>
         <li><a href="#">🚨 Phishing bancario: i 5 indicatori</a></li>
         <li><a href="#">🛡️ Hardening server Linux in 10 passi</a></li>
         <li><a href="#">🧑‍💻 Malware analysis base con Ghidra – parte 1</a></li>
-        <!-- Aggiungi altri <li> liberamente -->
+        <!-- aggiungi liberamente altri <li> -->
       </ul>
 
-      <nav id="pagination" class="pagination" aria-label="Paginazione"></nav>
+      <!-- i numeri verranno creati qui -->
+      <nav id="pager" class="pagination" aria-label="Paginazione"></nav>
     </main>
 
     <aside>
@@ -61,18 +61,11 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2025 Cyberino. Tutti i diritti riservati.</p>
-    <p>
-      <a href="mailto:info@cyberino.com">info@cyberino.com</a> ·
-      <a href="#">Privacy Policy</a> ·
-      <a href="#">Cookie Policy</a> ·
-      <a href="#">Credits</a>
-    </p>
+    <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
+    <p><a href="mailto:info@cyberino.com">info@cyberino.com</a></p>
   </footer>
 
-  <!-- Fuse.js (fuzzy search) -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <!-- Script principale -->
+  <!-- JAVASCRIPT -->
   <script src="js/main.js"></script>
 </body>
 </html>
