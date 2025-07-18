@@ -1,55 +1,86 @@
-/* === Paginazione client-side === */
+/* ===== Paginazione + Ricerca ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const ITEMS_PER_PAGE = 5;
 
-  const list     = document.getElementById("news-list");
-  const items    = Array.from(list.children);          // <li>…
-  const pagerNav = document.getElementById("pagination");
+  const listEl   = document.getElementById("news-list");
+  const allItems = Array.from(listEl.children);   // array di <li>
+  const pagerEl  = document.getElementById("pagination");
+  const searchEl = document.getElementById("search-input");
 
-  if (items.length <= ITEMS_PER_PAGE) {
-    // abbastanza pochi: mostra tutto e niente numeri
-    pagerNav.style.display = "none";
-    return;
+  /* ---------- PAGINAZIONE ---------- */
+  let viewItems   = allItems.slice();             // array filtrato corrente
+  let currentPage = 1;
+
+  function calcTotalPages() {
+    return Math.ceil(viewItems.length / ITEMS_PER_PAGE);
   }
 
-  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
-  let currentPage  = 1;
-
-  function showPage(page) {
+  function renderPage(page = 1) {
     currentPage = page;
 
-    // 1. nascondi tutti
-    items.forEach(el => el.style.display = "none");
+    // nascondi tutto
+    allItems.forEach(li => li.style.display = "none");
 
-    // 2. mostra solo quelli della pagina corrente
-    const start = (page - 1) * ITEMS_PER_PAGE;
-    const end   = start + ITEMS_PER_PAGE;
-    items.slice(start, end).forEach(el => el.style.display = "");
+    // mostra solo gli elementi della vista corrente
+    if (viewItems.length) {
+      const start = (page - 1) * ITEMS_PER_PAGE;
+      const end   = start + ITEMS_PER_PAGE;
+      viewItems.slice(start, end).forEach(li => li.style.display = "");
+    }
 
-    // 3. (ri)disegna i numeri
-    drawPager();
+    renderPager();
   }
 
-  function drawPager() {
-    pagerNav.innerHTML = "";           // pulisci
+  function renderPager() {
+    const totalPages = calcTotalPages();
 
-    for (let i = 1; i <= totalPages; i++) {
+    // nascondi barra se inutile
+    if (totalPages <= 1) {
+      pagerEl.style.display = "none";
+      pagerEl.innerHTML = "";
+      return;
+    }
+
+    pagerEl.style.display = "flex";
+    pagerEl.innerHTML = "";
+
+    for (let p = 1; p <= totalPages; p++) {
       const link = document.createElement("a");
-      link.href  = "#";
-      link.textContent = i;
-      if (i === currentPage) {
+      link.textContent = p;
+
+      if (p === currentPage) {
         link.classList.add("current");
-        link.removeAttribute("href");  // niente click sulla pagina attuale
       } else {
+        link.href = "#";
         link.addEventListener("click", e => {
           e.preventDefault();
-          showPage(i);
+          renderPage(p);
         });
       }
-      pagerNav.appendChild(link);
+      pagerEl.appendChild(link);
     }
   }
 
+  /* ---------- RICERCA LIVE ---------- */
+  searchEl.addEventListener("input", () => {
+    const q = searchEl.value.trim().toLowerCase();
+
+    if (q === "") {
+      viewItems = allItems.slice();         // reset
+      renderPage(1);
+      return;
+    }
+
+    viewItems = allItems.filter(li =>
+      li.textContent.toLowerCase().includes(q)
+    );
+
+    // Mostra tutto il risultato in un'unica "pagina" (niente numeri)
+    allItems.forEach(li => li.style.display = "none");
+    viewItems.forEach(li => li.style.display = "");
+    pagerEl.style.display = "none";
+  });
+
   // prima visualizzazione
-  showPage(1);
+  renderPage(1);
 });
