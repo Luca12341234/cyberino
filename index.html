@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <title>Cyberino – Cybersecurity News & Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font cartoon -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -29,6 +26,7 @@
                 <circle cx="10" cy="10" r="6" stroke="#fff" stroke-width="2" fill="none"/>
                 <line x1="14.5" y1="14.5" x2="22" y2="22" stroke="#fff" stroke-width="2"/>
               </svg>
+              <!-- ID UNICO usato dallo script -->
               <input id="search" type="search" placeholder="Cerca…">
             </div>
           </li>
@@ -40,17 +38,18 @@
   <!-- ===== MAIN & ASIDE ===== -->
   <div class="container">
     <main>
-      <ul id="list" class="news-list">
+      <!-- ID UNICO usato dallo script -->
+      <ul id="news-list" class="news-list">
         <li><a href="#">⚡️ Nuova vulnerabilità zero-day in Windows: cosa sapere subito</a></li>
         <li><a href="#">🔐 TLS 1.3 spiegata semplice</a></li>
         <li><a href="#">🚨 Phishing bancario: i 5 indicatori</a></li>
         <li><a href="#">🛡️ Hardening server Linux in 10 passi</a></li>
         <li><a href="#">🧑‍💻 Malware analysis base con Ghidra – parte 1</a></li>
-        <!-- aggiungi liberamente altri <li> -->
+        <!-- aggiungi altri <li> e verranno paginati/ricercati -->
       </ul>
 
-      <!-- i numeri verranno creati qui -->
-      <nav id="pager" class="pagination" aria-label="Paginazione"></nav>
+      <!-- ID UNICO usato dallo script -->
+      <nav id="pagination" class="pagination" aria-label="Paginazione"></nav>
     </main>
 
     <aside>
@@ -62,7 +61,6 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
-    <p><a href="mailto:info@cyberino.com">info@cyberino.com</a></p>
   </footer>
 
   <!-- JAVASCRIPT -->
