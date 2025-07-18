@@ -92,6 +92,10 @@ footer a{color:#80c8ff;}
   border-radius:3px;
 }
 
+.search-box input:focus{
+  outline:2px solid #ffeb3b;
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:850px){
   .container{flex-direction:column;}
