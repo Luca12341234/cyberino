@@ -1,6 +1,10 @@
 /* ===== RESET VELOCE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fa;color:#222;}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fa;
+  color:#222;
+}
 
 a{color:#0066b3;text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -12,8 +16,18 @@ header{background:#0074A6;color:#fff;}
   display:flex;align-items:center;justify-content:space-between;
   padding:10px 20px;
 }
-.logo img{max-height:60px}
-nav ul{display:flex;gap:25px;list-style:none;}
+
+/* logo: altezza fissa così l’SVG non resta 0×0 */
+.logo img{
+  height:60px;
+  width:auto;
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
 nav li{display:flex;align-items:center;font-weight:600;}
 
 /* ===== SEARCH (solo estetico) ===== */
@@ -23,15 +37,28 @@ nav li{display:flex;align-items:center;font-weight:600;}
   border:none;border-radius:2px;font-size:14px;
   outline:0;
 }
-.search-box input:disabled{background:#fff;color:#777;cursor:not-allowed;}
+.search-box input:disabled{
+  background:#fff;
+  color:#777;
+  cursor:not-allowed;
+}
+/* per Font Awesome (se lo re-userai) */
 .search-box .fa-magnifying-glass{
-  position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  position:absolute;left:10px;top:50%;
+  transform:translateY(-50%);
   color:#555;
+}
+/* per la lente SVG inline */
+header .search-box svg{
+  position:absolute;left:10px;top:50%;
+  transform:translateY(-50%);
+  stroke:#fff;
 }
 
 /* ===== LAYOUT ===== */
 .container{
-  max-width:1200px;margin:20px auto;display:flex;gap:20px;
+  max-width:1200px;margin:20px auto;
+  display:flex;gap:20px;
   padding:0 20px;
 }
 main{flex:1 1 0;}
@@ -41,7 +68,8 @@ aside{flex:0 0 300px;}
 .ad{
   background:#eaeaea;border:1px solid #ccc;
   display:flex;align-items:center;justify-content:center;
-  height:250px;margin-bottom:20px;font-size:14px;color:#777;
+  height:250px;margin-bottom:20px;
+  font-size:14px;color:#777;
 }
 .ad.tall{height:600px;}
 
@@ -56,9 +84,7 @@ aside{flex:0 0 300px;}
 .pagination{
   display:flex;justify-content:center;gap:10px;margin-bottom:30px;
 }
-.pagination a,.pagination span{
-  padding:6px 10px;
-}
+.pagination a,.pagination span{padding:6px 10px;}
 .pagination .current{font-weight:bold;color:#000;}
 
 /* ===== FOOTER ===== */
@@ -68,21 +94,12 @@ footer{
 }
 footer a{color:#80c8ff;}
 
-/* ===== RESPONSIVE BREAKPOINT ===== */
+/* ===== RESPONSIVE ===== */
 @media(max-width:850px){
   .container{flex-direction:column;}
   aside{order:-1;flex:1 1 100%;}
 }
 
-/* link dentro l'header in bianco */
-header nav a {
-  color: #fff;
-}
-header nav a:hover {
-  text-decoration:underline;
-}
-
-/* icona lente nel header */
-header .search-box svg {
-  stroke: #fff;
-}
+/* ===== LINK HEADER IN BIANCO ===== */
+header nav a{color:#fff;}
+header nav a:hover{text-decoration:underline;}
