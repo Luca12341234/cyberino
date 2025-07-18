@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>60 motori di ricerca e database OSINT per la cybersecurity (2025) | Cyberino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+      <a class="logo" href="index.html">
+        <img src="img/cyberino-logo.svg" alt="Cyberino">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li>
+            <div class="search-box">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10" cy="10" r="6" stroke="#fff" stroke-width="2" fill="none"/>
+                <line x1="14.5" y1="14.5" x2="22" y2="22" stroke="#fff" stroke-width="2"/>
+              </svg>
+              <!-- ID UNICO usato dallo script -->
+              <input id="search-input" type="search" placeholder="Cerca…">
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main class="article">
+  <h1>🔍 60 motori di ricerca e database OSINT per la cybersecurity (2025)</h1>
+
+  <p>
+    Open‑Source Intelligence (OSINT) significa raccogliere informazioni da fonti aperte — senza dover “bussare” a sistemi
+    altrui. Dai motori che scansionano l’intero IPv4, ai database di vulnerabilità, fino ai cataloghi di leak: ecco
+    60 strumenti indispensabili (e gratuiti, almeno in parte) per analisi di sicurezza, threat hunting e
+    red teaming.<br>
+    <em>Ultimo aggiornamento: luglio 2025.</em>
+  </p>
+
+  <!-- ====================================================== -->
+  <h2>1. Motori di ricerca generici</h2>
+  <ul>
+    <li><strong>Google</strong> (<a href="https://www.google.com">google.com</a>) — Il classico: indispensabile
+        per <em>Google Dorks</em> e ricerche mirate con operatori avanzati.</li>
+    <li><strong>Bing</strong> (<a href="https://www.bing.com">bing.com</a>) — Meno affollato, con
+        indici leggermente diversi da Google e API interessanti per l’automazione.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>2. Scansione di Internet e dispositivi IoT</h2>
+  <ul>
+    <li><strong>Shodan</strong> (<a href="https://www.shodan.io">shodan.io</a>) — Il “motore
+        di ricerca per dispositivi connessi”: banner, servizi e CVE correlati.</li>
+    <li><strong>Censys</strong> (<a href="https://censys.io">censys.io</a>) — Dataset IPv4/IPv6 e
+        certificati X.509, con query SQL‑like.</li>
+    <li><strong>ZoomEye</strong> (<a href="https://www.zoomeye.org">zoomeye.org</a>) — Alternativa
+        cinese a Shodan; ottimo per asset discovery in Asia‑Pacifico.</li>
+    <li><strong>FOFA</strong> (<a href="https://fofa.info">fofa.info</a>) — Indice
+        gigantesco (> 30 miliardi di host) e filtri su titolo HTML, header, favicon hash.</li>
+    <li><strong>Onyphe</strong> (<a href="https://www.onyphe.io">onyphe.io</a>) — Combina scansioni
+        mass‑scan + intelligence da leak e malware C2.</li>
+    <li><strong>Netlas</strong> (<a href="https://netlas.io">netlas.io</a>) — Query JSON
+        flessibili su TLS, WHOIS, DNS passivo, favicon, favicon hash.</li>
+    <li><strong>Recon.dev</strong> (<a href="https://recon.dev">recon.dev</a>) — API
+        specializzata in scansioni Certificate Transparency e sottodomini.</li>
+    <li><strong>Chaos Project</strong> (<a href="https://chaos.projectdiscovery.io">chaos.projectdiscovery.io</a>) —
+        Dataset gratuito di sub‑domain enumeration, pensato per <code>subfinder</code>.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>3. Rumore, traffico e contesto</h2>
+  <ul>
+    <li><strong>GreyNoise</strong> (<a href="https://greynoise.io">greynoise.io</a>) —
+        “Spam filter” per Internet: mostra se un IP genera rumore di scansioni note.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>4. Vulnerabilità, exploit e advisory</h2>
+  <ul>
+    <li><strong>NIST NVD</strong> (<a href="https://nvd.nist.gov">nvd.nist.gov</a>) —
+        Database CVE ufficiale: severity, CPE e metriche CVSS.</li>
+    <li><strong>osv.dev</strong> (<a href="https://osv.dev">osv.dev</a>) — Advisory
+        machine‑readable per ecosistemi open source (Go, npm, PyPI…).</li>
+    <li><strong>VulnIQ</strong> (<a href="https://vulnIQ.com">vulnIQ.com</a>) — Analisi CVE
+        arricchite con PoC e correlazioni cronologiche.</li>
+    <li><strong>VulDB</strong> (<a href="https://vuldb.com">vuldb.com</a>) — Community
+        con timeline di exploit‑in‑the‑wild.</li>
+    <li><strong>0day.today</strong> (<a href="https://0day.today">0day.today</a>) —
+        Marketplace/archivio di exploit proof‑of‑concept.</li>
+    <li><strong>Rapid7 DB</strong> (<a href="https://www.rapid7.com/db">rapid7.com/db</a>) —
+        Ricerca CVE collegata ai moduli Metasploit.</li>
+    <li><strong>Exploit‑DB</strong> (<a href="https://exploit-db.com">exploit-db.com</a>) —
+        Script exploit, fuzzing e cheatsheet <em>off‑the‑shelf</em>.</li>
+    <li><strong>Vulmon</strong> (<a href="https://vulmon.com">vulmon.com</a>) —
+        Aggregatore CVE con changelog e feed RSS personalizzati.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>5. Certificati, TLS e enumerazione sub‑domain</h2>
+  <ul>
+    <li><strong>crt.sh</strong> (<a href="https://crt.sh">crt.sh</a>) — Ricerca
+        Certificate Transparency log, essenziale per scoprire host nascosti.</li>
+    <li><strong>C99.nl</strong> (<a href="https://c99.nl">c99.nl</a>) — Interfaccia
+        semplificata per query CT log con filtri wildcard.</li>
+    <li><strong>FullHunt</strong> (<a href="https://fullhunt.io">fullhunt.io</a>) —
+        Monitoraggio continuo di certificati, subdomini, takeover.</li>
+    <li><strong>URLScan.io</strong> (<a href="https://urlscan.io">urlscan.io</a>) —
+        Screenshot, DOM e richieste di qualunque URL scansionato (utile per phishing).</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>6. DNS & co.</h2>
+  <ul>
+    <li><strong>DNSdb</strong> (<a href="https://dnsdb.io">dnsdb.io</a>) — DNS passivo
+        storico (tbytes di record A/CNAME/TXT…).</li>
+    <li><strong>DNSViz</strong> (<a href="https://dnsviz.net">dnsviz.net</a>) — Visualizza
+        delegazioni, DS, RRSIG: perfetto per troubleshooting DNSSEC.</li>
+    <li><strong>RobTex</strong> (<a href="https://robtex.com">robtex.com</a>) — Mappe
+        di “vicinanza” DNS/IP e correlazioni MX/ASN.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>7. Ricerca nei repository di codice</h2>
+  <ul>
+    <li><strong>SearchCode</strong> (<a href="https://searchcode.com">searchcode.com</a>) —
+        Regex su 75+ milioni di progetti OSS.</li>
+    <li><strong>grep.app</strong> (<a href="https://grep.app">grep.app</a>) —
+        Ricerca immediata su GitHub pubblici; supporta look‑behind/PCRE.</li>
+    <li><strong>NerdyData</strong> (<a href="https://nerdydata.com">nerdydata.com</a>) —
+        Trova frammenti di codice riutilizzati fra domini.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>8. OSINT per domini, tecnologia e business</h2>
+  <ul>
+    <li><strong>BuiltWith</strong> (<a href="https://builtwith.com">builtwith.com</a>) —
+        Fingerprinting di stack web (CMS, CDN, librerie JS…).</li>
+    <li><strong>Hunter.io</strong> (<a href="https://hunter.io">hunter.io</a>) —
+        Enumerazione e‑mail con verifica MX/SMTP.</li>
+    <li><strong>SpyDialer</strong> (<a href="https://spydialer.com">spydialer.com</a>) —
+        Lookup di numeri telefonici e reverse phone.</li>
+    <li><strong>ThatsThem</strong> (<a href="https://thatsthem.com">thatsthem.com</a>) —
+        People search: email ↔ indirizzo ↔ telefono.</li>
+    <li><strong>Snusbase</strong> (<a href="https://snusbase.com">snusbase.com</a>) —
+        Query su db di leak combinati (email, username, hash).</li>
+    <li><strong>Dehashed</strong> (<a href="https://dehashed.com">dehashed.com</a>) —
+        Motore di breach, include ricerche per password hash e dati geografici.</li>
+    <li><strong>LeakIX</strong> (<a href="https://leakix.net">leakix.net</a>) —
+        Scansiona bucket S3, endpoint Elasticsearch, Git repo pubblici.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>9. Living‑off‑the‑Land & misconfig</h2>
+  <ul>
+    <li><strong>GTFOBins</strong> (<a href="https://gtfo.mitre.org">gtfo.mitre.org</a>) —
+        Bypass privilege escalation con binari “benigni” di Linux.</li>
+    <li><strong>LOLBAS</strong> (<a href="https://lolbas-project.github.io">lolbas-project.github.io</a>) —
+        Controparti Windows di GTFOBins.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>10. Wireless & geolocalizzazione</h2>
+  <ul>
+    <li><strong>WiGLE</strong> (<a href="https://wigle.net">wigle.net</a>) —
+        Milioni di reti Wi‑Fi wardriving, visibili su mappa.</li>
+    <li><strong>WiFiMap</strong> (<a href="https://wifimap.io">wifimap.io</a>) —
+        Hotspot pubblici con velocità stimata.</li>
+    <li><strong>WiFiSpc</strong> (<a href="https://wifispc.com">wifispc.com</a>) —
+        Database crowdsourced di SSID e coordinate.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>11. Telecamere ed IoT esposti</h2>
+  <ul>
+    <li><strong>Insecam</strong> (<a href="https://insecam.org">insecam.org</a>) —
+        Live feed di videocamere IP senza password o con credenziali di default.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>12. Dark web & Tor</h2>
+  <ul>
+    <li><strong>Ahmia</strong> (<a href="https://ahmia.fi">ahmia.fi</a>) —
+        Indicizza hidden‑services onion “puliti” (no abusi).</li>
+    <li><strong>tor.link</strong> (<a href="https://tor.link">tor.link</a>) —
+        Ricerca onion + bridge, filtro per lingua.</li>
+    <li><strong>ORKL</strong> (<a href="https://orkl.org">orkl.org</a>) —
+        Directory open‑source di servizi Tor con ranking reputazionale.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>13. File, malware & sandbox</h2>
+  <ul>
+    <li><strong>FileSec</strong> (<a href="https://filesec.io">filesec.io</a>) —
+        Ricerca in drop‑zone pubbliche (FTP, SMB, WebDAV).</li>
+    <li><strong>MalAPI</strong> (<a href="https://malapi.io">malapi.io</a>) —
+        “Cheat sheet” interattivo di funzioni Win32 usate dal malware.</li>
+    <li><strong>Tria.ge</strong> (<a href="https://tria.ge">tria.ge</a>) —
+        Sandbox cloud automatizzata per PE, APK, DOCM, ecc.</li>
+  </ul>
+
+  <!-- ====================================================== -->
+  <h2>14. Miscellanea</h2>
+  <ul>
+    <li><strong>Riddler</strong> (<a href="https://riddler.io">riddler.io</a>) —
+        Cerca stringhe nei banner di servizio (es. “Welcome to Apache”).</li>
+    <li><strong>Omnisint</strong> (<a href="https://omnisint.io">omnisint.io</a>) —
+        Bulk subdomain enumeration + wordlist generate.</li>
+    <li><strong>SynapsInt</strong> (<a href="https://synapsint.com">synapsint.com</a>) —
+        Aggregatore OSINT multilingua: domini, WHOIS, leak.</li>
+    <li><strong>TinEye</strong> (<a href="https://tineye.com">tineye.com</a>) —
+        Reverse‑image search alternativo ai servizi BigTech.</li>
+    <li><strong>mylnikov.org</strong> (<a href="https://mylnikov.org">mylnikov.org</a>) —
+        Database open di geo‑IP e proxy/VPN noti.</li>
+  </ul>
+
+  <p><em>Ne manca qualcuno? Fammelo sapere nei commenti o via Mastodon @cyberino.</em></p>
+</main>
+
+<footer>
+    <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
+  </footer>
+
+</body>
+</html>
