@@ -73,3 +73,16 @@ footer a{color:#80c8ff;}
   .container{flex-direction:column;}
   aside{order:-1;flex:1 1 100%;}
 }
+
+/* link dentro l'header in bianco */
+header nav a {
+  color: #fff;
+}
+header nav a:hover {
+  text-decoration:underline;
+}
+
+/* icona lente nel header */
+header .search-box svg {
+  stroke: #fff;
+}
