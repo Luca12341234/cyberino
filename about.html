@@ -6,31 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- stile rapido solo per questa pagina -->
   <style>
     main.about{max-width:750px;margin:40px auto;background:#fff;padding:40px 50px;
       border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);line-height:1.55}
     main.about h1{font-family:'Luckiest Guy',Arial Black,sans-serif;font-size:32px;
       margin-bottom:20px;text-shadow:1px 1px 0 #004a79;text-align:center}
     .profile{display:flex;align-items:center;gap:24px;margin:30px 0}
-    .profile img{width:100px;height:100px;border-radius:50%}
+    .profile img{width:110px;height:110px;border-radius:50%}
     .profile h2{margin:0;font-size:22px}
     .profile p{margin:4px 0 0;font-size:14px;color:#555}
-    .about-cta{margin:40px 0;text-align:center}
-    .about-cta a{background:#0074A6;color:#fff;padding:10px 28px;border-radius:4px;
-      font-weight:bold;text-decoration:none}
-    .about-cta a:hover{background:#005e85}
     h2{font-size:22px;margin:32px 0 14px;color:#0074A6}
+    .about-cta{margin:50px 0;text-align:center}
+    .about-cta a{background:#0074A6;color:#fff;padding:16px 36px;border-radius:6px;
+      font-size:18px;font-weight:bold;text-decoration:none}
+    .about-cta a:hover{background:#005e85}
   </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
   <div class="topbar">
     <a class="logo" href="index.html">
-      <img src="img/cyberino-logo.svg" alt="Cyberino">
+      <img src="../img/cyberino-logo.svg" alt="Cyberino">
     </a>
 
     <nav>
@@ -42,13 +39,11 @@
   </div>
 </header>
 
-<!-- ===== MAIN ===== -->
 <main class="about">
   <h1>Chi sono</h1>
 
-  <!-- profilo singolo -->
   <div class="profile">
-    <img src="img/avatar-luca.svg" alt="Luca M.">
+    <img src="../img/avatar.png" alt="Luca M.">
     <div>
       <h2>Luca M.</h2>
       <p>CEO, autore e unico colpevole di Cyberino</p>
@@ -56,33 +51,24 @@
   </div>
 
   <p>
-    Ho creato <strong>Cyberino</strong> perché, ogni volta che risolvevo un problema
-    di sicurezza o scoprivo un nuovo tool, finivo per perdere gli appunti tra mille note.
-    Ora li pubblico qui: se servono anche a te, tanto meglio.
+    <strong>Cyberino</strong> è il mio blocco‑note pubblico: appunto e condivido
+    tool, guide e risorse che uso davvero nel lavoro quotidiano di sicurezza
+    informatica. Niente fuffa, niente click‑bait.
   </p>
 
   <h2>Cosa trovi su Cyberino?</h2>
   <ul>
-    <li>🔍 Raccolte di tool OSINT e networking testati sul campo.</li>
+    <li>🔍 Raccolte di tool OSINT e networking provati sul campo.</li>
     <li>🛠️ Guide lampo per hardening, packet capture, scripting.</li>
-    <li>🎓 Consigli low‑cost su corsi e certificazioni.</li>
-    <li>📚 Recensioni di libri, talk e risorse per restare aggiornati in cybersecurity.</li>
-  </ul>
-
-  <h2>Prossimi obiettivi</h2>
-  <ul>
-    <li><strong>Podcast mensile</strong> – interviste a professionisti blue/red team.</li>
-    <li><strong>Lab GitHub</strong> – repository con VM vulnerable e playbook Ansible.</li>
-    <li><strong>Newsletter</strong> – riepilogo settimanale di CVE e tool open‑source.</li>
+    <li>🎓 Consigli onesti su corsi e certificazioni, senza sponsor nascosti.</li>
+    <li>📚 Recensioni flash di libri o talk davvero utili.</li>
   </ul>
 
   <div class="about-cta">
-    <p><strong>Hai idee o vuoi correggermi?</strong></p>
     <a href="mailto:luca@cyberino.example">Scrivimi →</a>
   </div>
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
 </footer>
