@@ -7,27 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    main.about{max-width:750px;margin:40px auto;background:#fff;padding:40px 50px;
-      border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);line-height:1.55}
-    main.about h1{font-family:'Luckiest Guy',Arial Black,sans-serif;font-size:32px;
-      margin-bottom:20px;text-shadow:1px 1px 0 #004a79;text-align:center}
-    .profile{display:flex;align-items:center;gap:24px;margin:30px 0}
-    .profile img{width:110px;height:110px;border-radius:50%}
-    .profile h2{margin:0;font-size:22px}
-    .profile p{margin:4px 0 0;font-size:14px;color:#555}
-    h2{font-size:22px;margin:32px 0 14px;color:#0074A6}
-    .about-cta{margin:50px 0;text-align:center}
-    .about-cta a{background:#0074A6;color:#fff;padding:16px 36px;border-radius:6px;
-      font-size:18px;font-weight:bold;text-decoration:none}
+    main.about{max-width:800px;margin:50px auto;background:#fff;padding:50px 60px;
+      border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);line-height:1.6}
+    main.about h1{font-family:'Luckiest Guy',Arial Black,sans-serif;font-size:34px;
+      margin-bottom:24px;text-shadow:1px 1px 0 #004a79;text-align:center}
+    .profile{display:flex;align-items:center;gap:26px;margin:35px 0}
+    .profile img{width:120px;height:120px;border-radius:50%}
+    .profile h2{margin:0;font-size:24px}
+    .profile p{margin:4px 0 0;font-size:15px;color:#555}
+    h2{font-size:23px;margin:36px 0 16px;color:#0074A6}
+    .about-cta{margin:55px 0;text-align:center}
+    .about-cta a{background:#0074A6;color:#fff;padding:18px 40px;border-radius:6px;
+      font-size:19px;font-weight:bold;text-decoration:none}
     .about-cta a:hover{background:#005e85}
   </style>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
   <div class="topbar">
     <a class="logo" href="index.html">
-      <img src="../img/cyberino-logo.svg" alt="Cyberino">
+      <img src="img/cyberino-logo.svg" alt="Cyberino">
     </a>
 
     <nav>
@@ -39,29 +40,42 @@
   </div>
 </header>
 
+<!-- ===== MAIN ===== -->
 <main class="about">
   <h1>Chi sono</h1>
 
   <div class="profile">
-    <img src="../img/avatar.png" alt="Luca M.">
+    <!-- assicurati che il file sia in /img/avatar.png -->
+    <img src="img/avatar.png" alt="Luca M.">
     <div>
       <h2>Luca M.</h2>
-      <p>CEO, autore e unico colpevole di Cyberino</p>
+      <p>CEO &amp; unico autore di Cyberino<br>
+         Esperto IT&nbsp;&amp;&nbsp;Cybersecurity con 10+ anni tra blu‑team e red‑team.</p>
     </div>
   </div>
 
   <p>
-    <strong>Cyberino</strong> è il mio blocco‑note pubblico: appunto e condivido
-    tool, guide e risorse che uso davvero nel lavoro quotidiano di sicurezza
-    informatica. Niente fuffa, niente click‑bait.
+    Benvenuto su <strong>Cyberino</strong> – il mio blocco‑note pubblico dove
+    raccolgo script, cheat‑sheet e <em>how‑to</em> che uso ogni giorno fra SOC,
+    pentest e hardening server. Zero fuffa, zero click‑bait: solo cose che ho
+    provato davvero.
+  </p>
+
+  <p>
+    Se vuoi dare un’occhiata ai progetti open‑source, ai talk e ai lab che ho
+    pubblicato, passa sul mio portfolio:
+    <a href="https://luca12341234.github.io/portfolio/" target="_blank" rel="noopener">
+      luca12341234.github.io/portfolio
+    </a>.
   </p>
 
   <h2>Cosa trovi su Cyberino?</h2>
   <ul>
-    <li>🔍 Raccolte di tool OSINT e networking provati sul campo.</li>
-    <li>🛠️ Guide lampo per hardening, packet capture, scripting.</li>
-    <li>🎓 Consigli onesti su corsi e certificazioni, senza sponsor nascosti.</li>
-    <li>📚 Recensioni flash di libri o talk davvero utili.</li>
+    <li>🔍 Raccolte di tool OSINT e networking testati sul campo.</li>
+    <li>🛠️ Guide lampo per hardening, packet capture, automation scripting.</li>
+    <li>🎓 Consigli onesti su corsi e certificazioni (niente sponsor travestiti).</li>
+    <li>📚 Recensioni flash di libri, paper e talk che meritano davvero.</li>
+    <li>💡 Note veloci su bug, CTF e exploit che non voglio dimenticare.</li>
   </ul>
 
   <div class="about-cta">
@@ -69,6 +83,7 @@
   </div>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
 </footer>
