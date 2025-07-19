@@ -2,28 +2,14 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Chi sono | Cyberino</title>
+  <title>Cyberino – Cybersecurity News &amp; Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    main.about{max-width:750px;margin:40px auto;background:#fff;padding:40px 50px;
-      border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);line-height:1.55}
-    main.about h1{font-family:'Luckiest Guy',Arial Black,sans-serif;font-size:32px;
-      margin-bottom:20px;text-shadow:1px 1px 0 #004a79;text-align:center}
-    .profile{display:flex;align-items:center;gap:24px;margin:30px 0}
-    .profile img{width:110px;height:110px;border-radius:50%}
-    .profile h2{margin:0;font-size:22px}
-    .profile p{margin:4px 0 0;font-size:14px;color:#555}
-    h2{font-size:22px;margin:32px 0 14px;color:#0074A6}
-    .about-cta{margin:50px 0;text-align:center}
-    .about-cta a{background:#0074A6;color:#fff;padding:16px 36px;border-radius:6px;
-      font-size:18px;font-weight:bold;text-decoration:none}
-    .about-cta a:hover{background:#005e85}
-  </style>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
   <div class="topbar">
     <a class="logo" href="index.html">
@@ -33,44 +19,139 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10" cy="10" r="6" stroke="#fff" stroke-width="2" fill="none"/>
+              <line x1="14.5" y1="14.5" x2="22" y2="22" stroke="#fff" stroke-width="2"/>
+            </svg>
+            <!-- input con id GIUSTO -->
+            <input id="search-input" type="search" placeholder="Cerca…">
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main class="about">
-  <h1>Chi sono</h1>
+<!-- ===== MAIN & ASIDE ===== -->
+<div class="container">
+  <main>
+    <ul id="news-list" class="news-list">
+      <li><a href="articoli/motori-osint.html">🔍 62 motori di ricerca e database OSINT per la cybersecurity (2025)</a></li>
+      <li><a href="articoli/netacad-low-cost.html">🎓 Come ottenere i corsi Cisco NetAcad a prezzo ridotto (2025)</a></li>
+      <li><a href="articoli/top-networking-tools.html">🛠️ Top 5 tool di networking da avere nei segnalibri (2025)</a></li>
+    </ul>
 
-  <div class="profile">
-    <img src="../img/avatar.png" alt="Luca M.">
-    <div>
-      <h2>Luca M.</h2>
-      <p>CEO, autore e unico colpevole di Cyberino</p>
-    </div>
-  </div>
+    <nav id="pagination" class="pagination" aria-label="Paginazione"></nav>
+  </main>
 
-  <p>
-    <strong>Cyberino</strong> è il mio blocco‑note pubblico: appunto e condivido
-    tool, guide e risorse che uso davvero nel lavoro quotidiano di sicurezza
-    informatica. Niente fuffa, niente click‑bait.
-  </p>
+  <aside>
+    <div class="ad">Spazio pubblicità 300×250</div>
+    <div class="ad tall">Spazio pubblicità 300×600</div>
+  </aside>
+</div>
 
-  <h2>Cosa trovi su Cyberino?</h2>
-  <ul>
-    <li>🔍 Raccolte di tool OSINT e networking provati sul campo.</li>
-    <li>🛠️ Guide lampo per hardening, packet capture, scripting.</li>
-    <li>🎓 Consigli onesti su corsi e certificazioni, senza sponsor nascosti.</li>
-    <li>📚 Recensioni flash di libri o talk davvero utili.</li>
-  </ul>
-
-  <div class="about-cta">
-    <a href="mailto:luca@cyberino.example">Scrivimi →</a>
-  </div>
-</main>
-
+<!-- ===== FOOTER ===== -->
 <footer>
   <p>&copy; 2025 Cyberino – Tutti i diritti riservati.</p>
 </footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+/* === PAGINAZIONE + RICERCA “FUZZY” SENZA LIBRERIE === */
+document.addEventListener("DOMContentLoaded", () => {
+  const PER_PAGE = 5;
+
+  const listEl  = document.getElementById("news-list");
+  const pagerEl = document.getElementById("pagination");
+  /* *** BUG FIX: ora cerchiamo l’ID corretto *** */
+  const search  = document.getElementById("search-input");
+
+  if (!listEl || !pagerEl || !search) {
+    console.error("Mancano gli id richiesti (news-list, pagination, search-input)");
+    return;
+  }
+
+  const items = Array.from(listEl.children);     // tutti i <li>
+
+  /* --- distanza Levenshtein minima --- */
+  const lev = (a, b) => {
+    const al = a.length, bl = b.length;
+    if (!al) return bl; if (!bl) return al;
+    const m = Array.from({ length: al + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= bl; j++) m[0][j] = j;
+    for (let i = 1; i <= al; i++)
+      for (let j = 1; j <= bl; j++)
+        m[i][j] = a[i - 1] === b[j - 1]
+          ? m[i - 1][j - 1]
+          : Math.min(m[i - 1][j], m[i][j - 1], m[i - 1][j - 1]) + 1;
+    return m[al][bl];
+  };
+
+  /* --- normalizza (niente accenti, tutto minuscolo) --- */
+  const norm = s => s.toLowerCase()
+                     .normalize("NFD")
+                     .replace(/[\u0300-\u036f]/g, "");
+
+  /* --- stato --- */
+  let view = [...items];
+  let page = 1;
+  const pages = () => Math.ceil(view.length / PER_PAGE);
+
+  function renderPage(p = 1) {
+    page = p;
+    items.forEach(li => li.style.display = "none");
+    view
+      .slice((p - 1) * PER_PAGE, p * PER_PAGE)
+      .forEach(li => li.style.display = "");
+    renderPager();
+  }
+
+  function renderPager() {
+    pagerEl.innerHTML = "";
+    if (pages() <= 1) { pagerEl.style.display = "none"; return; }
+
+    pagerEl.style.display = "flex";
+    for (let i = 1; i <= pages(); i++) {
+      const a = document.createElement("a");
+      a.textContent = i;
+      if (i === page) a.className = "current";
+      else {
+        a.href = "#";
+        a.onclick = e => { e.preventDefault(); renderPage(i); };
+      }
+      pagerEl.appendChild(a);
+    }
+  }
+
+  /* --- ricerca live --- */
+  search.addEventListener("input", () => {
+    const q = norm(search.value.trim());
+
+    if (!q) {
+      view = [...items];
+      return renderPage(1);
+    }
+
+    view = items.filter(li => {
+      const txt = norm(li.textContent.trim());
+      return txt.includes(q) || lev(txt, q) <= 2;  // “pishing” ≈ “phishing”
+    });
+
+    if (view.length > PER_PAGE) {
+      renderPage(1);
+    } else {
+      items.forEach(li => li.style.display = "none");
+      view.forEach(li  => li.style.display = "");
+      pagerEl.style.display = "none";
+    }
+  });
+
+  /* --- prima visualizzazione --- */
+  renderPage(1);
+});
+</script>
 </body>
 </html>
