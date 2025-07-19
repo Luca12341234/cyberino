@@ -2,26 +2,25 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Chi siamo | Cyberino</title>
+  <title>Chi sono | Cyberino</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- stile rapido solo per questa pagina -->
   <style>
-    /* ritocchi leggeri solo per questa pagina */
-    main.about h2{font-size:22px;margin:32px 0 14px;color:#0074A6}
-    .values, .team{display:grid;gap:18px}
-    .values{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .value-card, .member{background:#fff;padding:20px;border-radius:8px;
-      box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .value-card h3{margin-bottom:10px;font-size:18px}
-    .member img{width:60px;height:60px;border-radius:50%;margin-right:15px}
-    .member{display:flex;align-items:center}
-    .member-info h4{margin:0 0 4px;font-size:16px}
-    .member-info p{margin:0;font-size:14px;color:#555}
-    .about-cta{margin:40px 0;text-align:center}
-    .about-cta a{background:#0074A6;color:#fff;padding:10px 24px;border-radius:4px;
-      font-weight:bold;font-family:inherit}
-    .about-cta a:hover{background:#005e85;text-decoration:none}
+    main.about{max-width:750px;margin:40px auto;background:#fff;padding:40px 50px;
+      border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);line-height:1.55}
+    main.about h1{font-family:'Luckiest Guy',Arial Black,sans-serif;font-size:32px;
+      margin-bottom:20px;text-shadow:1px 1px 0 #004a79;text-align:center}
+    .profile{display:flex;align-items:center;gap:24px;margin:30px 0}
+    .profile img{width:100px;height:100px;border-radius:50%}
+    .profile h2{margin:0;font-size:22px}
+    .profile p{margin:4px 0 0;font-size:14px;color:#555}
+    .about-cta{margin:40px 0;text-align:center}
+    .about-cta a{background:#0074A6;color:#fff;padding:10px 28px;border-radius:4px;
+      font-weight:bold;text-decoration:none}
+    .about-cta a:hover{background:#005e85}
   </style>
 </head>
 <body>
@@ -36,97 +35,58 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <!-- ===== MAIN ===== -->
-<div class="container">
-  <main class="about">
-    <h1>Chi siamo</h1>
+<main class="about">
+  <h1>Chi sono</h1>
 
-    <p>
-      <strong>Cyberino</strong> è un progetto indipendente nato nel 2025 per
-      diffondere competenze di cybersecurity in modo pratico e accessibile.
-      Raccogliamo tool, write‑up, risorse OSINT e percorsi di studio — come un
-      grande <em>blocco‑note pubblico</em> sempre in evoluzione.
-    </p>
-
-    <!-- =============== Mission & Vision =============== -->
-    <h2>La nostra mission</h2>
-    <p>
-      Rendere la sicurezza informatica comprensibile e alla portata di tutti:
-      dallo studente che prepara il primo esame CCNA, al professionista che
-      cerca l’ultima vulnerabilità zero‑day.
-    </p>
-
-    <!-- =============== Core values cards =============== -->
-    <section class="values">
-      <div class="value-card">
-        <h3>Condivisione libera</h3>
-        <p>Guide e articoli gratis, senza paywall — perché la conoscenza cresce
-           quando è aperta.</p>
-      </div>
-      <div class="value-card">
-        <h3>Hands‑on first</h3>
-        <p>Lab, cheat‑sheet, scenario reali: imparare facendo batte teorizzare.</p>
-      </div>
-      <div class="value-card">
-        <h3>Community</h3>
-        <p>Ci trovi su Mastodon e Discord: domande, pull‑request e cazziatoni sono
-           sempre benvenuti.</p>
-      </div>
-    </section>
-
-    <!-- =============== Team =============== -->
-    <h2>Il team</h2>
-    <section class="team">
-      <div class="member">
-        <img src="img/avatar-alex.svg" alt="Alex">
-        <div class="member-info">
-          <h4>Alex R.</h4>
-          <p>Red Teamer &amp; founder</p>
-        </div>
-      </div>
-      <div class="member">
-        <img src="img/avatar-sara.svg" alt="Sara">
-        <div class="member-info">
-          <h4>Sara B.</h4>
-          <p>Blue Team lead</p>
-        </div>
-      </div>
-      <div class="member">
-        <img src="img/avatar-luca.svg" alt="Luca">
-        <div class="member-info">
-          <h4>Luca M.</h4>
-          <p>Full‑stack &amp; DevSecOps</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== Timeline =============== -->
-    <h2>La nostra storia in 30 secondi</h2>
-    <ul>
-      <li><strong>Gen 2025</strong> – Lanciato Cyberino con 3 articoli OSINT.</li>
-      <li><strong>Mar 2025</strong> – Superata quota 10 000 visite mensili.</li>
-      <li><strong>Giu 2025</strong> – Aperto il server Discord pubblico.</li>
-      <li><strong>Lug 2025</strong> – Pubblicata la guida NetAcad low‑cost
-        (diventa virale su Reddit).</li>
-    </ul>
-
-    <!-- =============== Call to action =============== -->
-    <div class="about-cta">
-      <p><strong>Vuoi collaborare o inviare guest post?</strong></p>
-      <a href="mailto:info@cyberino.example">Scrivici →</a>
+  <!-- profilo singolo -->
+  <div class="profile">
+    <img src="img/avatar-luca.svg" alt="Luca M.">
+    <div>
+      <h2>Luca M.</h2>
+      <p>CEO, autore e unico colpevole di Cyberino</p>
     </div>
-  </main>
+  </div>
 
-  <aside>
-    <div class="ad">Spazio pubblicità 300×250</div>
-  </aside>
-</div>
+  <p>
+    Ho creato <strong>Cyberino</strong> perché, ogni volta che risolvevo un problema
+    di sicurezza o trovavo un tool interessante, finivo per perdere gli appunti
+    tra mille note. Ora li pubblico qui: se tornano utili anche a te, tanto meglio.
+  </p>
+
+  <p>
+    Non sono un guru infallibile né un team di cento persone: lavoro da solo,
+    tra <em>pentest</em>, hardening server e un esame di certificazione dietro l’altro.
+    Il sito è il mio blocco‑note pubblico, niente pubblicità invasive né articoli
+    click‑bait.
+  </p>
+
+  <h2>Cosa trovi su Cyberino?</h2>
+  <ul>
+    <li>🔍 Raccolte di tool OSINT e networking testati sul campo.</li>
+    <li>🛠️ Guide lampo per hardening, packet capture, scripting.</li>
+    <li>🎓 Consigli low‑cost su corsi e certificazioni.</li>
+  </ul>
+
+  <h2>Timeline flash</h2>
+  <ul>
+    <li><strong>Gen 2025</strong> – Pubblico i primi 3 articoli.</li>
+    <li><strong>Mar 2025</strong> – 10 000 visite mensili, <em>what?!</em></li>
+    <li><strong>Lug 2025</strong> – Il post NetAcad low‑cost finisce su Reddit
+        e manda giù il server per un giorno.</li>
+  </ul>
+
+  <div class="about-cta">
+    <p><strong>Hai idee o vuoi correggermi?</strong></p>
+    <a href="mailto:luca@cyberino.example">Scrivimi →</a>
+  </div>
+</main>
 
 <!-- ===== FOOTER ===== -->
 <footer>
